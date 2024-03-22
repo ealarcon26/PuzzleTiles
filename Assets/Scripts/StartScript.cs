@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartScript : MonoBehaviour
 {
@@ -13,9 +14,15 @@ public class StartScript : MonoBehaviour
     public GameObject startPanel;
     public GameObject tileList;
     public Animator playerAnimator;
+    public GameObject dataList;
+    public GameObject panelTimer;
+    public GameObject panelScore;
 
     void Awake()
     {
+        panelTimer.SetActive(false);
+        panelScore.SetActive(false);
+        dataList = GameObject.Find("DataScript");
         countDownAnimation.SetActive(false);
         countDownText.gameObject.SetActive(false);
     }
@@ -41,5 +48,16 @@ public class StartScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         countDownAnimation.SetActive(false);
         tileList.SetActive(true);
+        dataList.GetComponent<DataScript>().getQuestion();
+        startPanel.transform.parent.gameObject.SetActive(false);
+        panelTimer.SetActive(true);
+        panelScore.SetActive(true);
+        StartCoroutine(GetComponent<TimerScript>().startTimer());
+    }
+
+    public void gameRestart()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 }
