@@ -58,6 +58,6 @@ public class StartScript : MonoBehaviour
     public void gameRestart()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        SceneManager.LoadScene("StartScene");
     }
 }

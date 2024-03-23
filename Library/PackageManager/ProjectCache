@@ -5,21 +5,72 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638464604731163272
-    m_Hash: 1206723745
+      ticks: 638468027935967957
+    m_Hash: 2023422526
   m_LockFileStatus:
     m_FilePath: F:/Unity_Projects/PuzzleTile/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638464604835584302
-    m_Hash: 3682739031
+      ticks: 638468027936738659
+    m_Hash: 3598600206
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
+    - packageId: com.unity.2d.sprite@1.0.0
+      testable: 0
+      isDirectDependency: 1
+      version: 1.0.0
+      source: 2
+      resolvedPath: F:\Unity_Projects\PuzzleTile\Library\PackageCache\com.unity.2d.sprite@1.0.0
+      assetPath: Packages/com.unity.2d.sprite
+      name: com.unity.2d.sprite
+      displayName: 2D Sprite
+      author:
+        name: 
+        email: 
+        url: 
+      category: 2D
+      type: 
+      description: Use Unity Sprite Editor Window to create and edit Sprite asset
+        properties like pivot, borders and Physics shape
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 1.0.0
+        compatible:
+        - 1.0.0
+        verified: 1.0.0
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - 2d
+      - sprite
+      - sprite editor window
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 0
+      repository:
+        type: 
+        url: 
+        revision: 
+        path: 
     - packageId: com.unity.collab-proxy@1.13.5
       testable: 0
       isDirectDependency: 1
@@ -3038,6 +3089,10 @@ m_PackageAssets:
         - 1.9.0
         - 1.10.1
         - 1.11.0
+        - 1.12.0
+        - 1.12.1
+        - 1.12.2
+        - 1.12.4
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -3063,6 +3118,10 @@ m_PackageAssets:
         - 1.9.0
         - 1.10.1
         - 1.11.0
+        - 1.12.0
+        - 1.12.1
+        - 1.12.2
+        - 1.12.4
         verified: 1.0.1
       dependencies:
       - name: com.unity.modules.unitywebrequest

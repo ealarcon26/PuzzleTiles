@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,7 @@ public class DataScript : MonoBehaviour
     public TileData selectedQuestion;
     public List<int> selectedTiles;
     public List<GameObject> tileTexts = new List<GameObject>();
-    public Text titleText;
+    public TextMeshPro titleText;
     public int correctCount = 0;
     public Text scoreText;
     public int playerScore = 0;
@@ -135,7 +136,7 @@ public class DataScript : MonoBehaviour
     public async Task getQuestion()
     {   
         resetTiles();
-        titleText = GameObject.Find("TitleText").GetComponent<Text>();
+        titleText = GameObject.Find("TitleTextMesh").GetComponent<TextMeshPro>();
         int randomNumber;
         if (usedQuestions.Count != 5)
         {

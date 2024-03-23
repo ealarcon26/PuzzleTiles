@@ -9,10 +9,12 @@ public class OnTileSelect : MonoBehaviour
     [SerializeField]
     Material wrongMat, correctMat, neutralMat;
     public GameObject dataList;
+    public GameObject playerCharacter;
     public bool isCorrect = false;
 
     void Awake()
     {
+        playerCharacter = GameObject.FindWithTag("Player");
         dataList = GameObject.Find("DataScript");
     }
     void Start()
@@ -25,6 +27,7 @@ public class OnTileSelect : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             if (gameObject == getClickedObj(out RaycastHit hit))
             checkAnswer();
+            MoveToSelectedTile();
         }
     }
 
@@ -37,6 +40,13 @@ public class OnTileSelect : MonoBehaviour
             target = hit.collider.gameObject;
         }
         return target;
+    }
+
+    void MoveToSelectedTile()
+    {
+        Vector3 relativePos = gameObject.transform.position - playerCharacter.transform.position;
+        Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
+        playerCharacter.transform.rotation = rot;
     }
 
     public async void checkAnswer()
