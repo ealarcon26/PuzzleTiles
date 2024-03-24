@@ -26,8 +26,10 @@ public class OnTileSelect : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) {
             if (gameObject == getClickedObj(out RaycastHit hit))
-            checkAnswer();
-            MoveToSelectedTile();
+            {
+                checkAnswer();
+                playerCharacter.GetComponent<CharacterMovement>().selectedTile = gameObject;
+            }
         }
     }
 
@@ -40,13 +42,6 @@ public class OnTileSelect : MonoBehaviour
             target = hit.collider.gameObject;
         }
         return target;
-    }
-
-    void MoveToSelectedTile()
-    {
-        Vector3 relativePos = gameObject.transform.position - playerCharacter.transform.position;
-        Quaternion rot = Quaternion.LookRotation(relativePos, Vector3.up);
-        playerCharacter.transform.rotation = rot;
     }
 
     public async void checkAnswer()
