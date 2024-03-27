@@ -21,7 +21,7 @@ public class DataScript : MonoBehaviour
     public List<int> usedQuestions;
     public TileData selectedQuestion;
     public List<int> selectedTiles;
-    public List<GameObject> tileTexts = new List<GameObject>();
+    public List<TextMeshPro> tileTexts = new List<TextMeshPro>();
     public TextMeshPro titleText;
     public int correctCount = 0;
     public Text scoreText;
@@ -130,7 +130,7 @@ public class DataScript : MonoBehaviour
     {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("tileText"))
         {
-            tileTexts.Add(obj);
+            tileTexts.Add(obj.GetComponent<TextMeshPro>());
         }
     }
     public async Task getQuestion()
@@ -168,8 +168,8 @@ public class DataScript : MonoBehaviour
             while (selectedTiles.Contains(randomTile));
 
             selectedTiles.Add(randomTile);
-            tileTexts[randomTile].transform.parent.transform.parent.transform.parent.GetComponent<OnTileSelect>().isCorrect = false;
-            tileTexts[randomTile].GetComponent<Text>().text = selectedQuestion.WrongAnswers[increasingNumber].ToString();
+            tileTexts[randomTile].transform.parent.GetComponent<OnTileSelect>().isCorrect = false;
+            tileTexts[randomTile].text = selectedQuestion.WrongAnswers[increasingNumber].ToString();
             increasingNumber++;
             wrongAnswerLength--;
         }
@@ -189,9 +189,8 @@ public class DataScript : MonoBehaviour
             while (selectedTiles.Contains(randomTile));
 
             selectedTiles.Add(randomTile);
-            tileTexts[randomTile].transform.parent.transform.parent.transform.parent.GetComponent<OnTileSelect>().isCorrect = true;
-            tileTexts[randomTile].GetComponent<Text>().text = selectedQuestion.CorrectAnswers[increasingNumber];
-            
+            tileTexts[randomTile].transform.parent.GetComponent<OnTileSelect>().isCorrect = true;
+            tileTexts[randomTile].text = selectedQuestion.CorrectAnswers[increasingNumber].ToString();
             increasingNumber++;
             correctAnswerLength--;
         }

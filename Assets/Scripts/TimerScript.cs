@@ -41,7 +41,7 @@ public class TimerScript : MonoBehaviour
         if (minute <= 0 && seconds <= 0 && !isDead)
         {
             GameObject.Find("PanelFinish").GetComponent<Animator>().SetBool("GameFinish", true);
-            GameObject.Find("TitleFinish").GetComponent<Text>().text = "Game Over!";
+            GameObject.Find("TitleFinish").GetComponent<Text>().text = "GAME OVER";
             GameObject.Find("ScoreFinish").GetComponent<Text>().text = "Score: "+ GameObject.Find("DataScript").GetComponent<DataScript>().playerScore;
             isDead = true;
         }

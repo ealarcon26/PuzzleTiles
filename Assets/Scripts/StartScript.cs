@@ -40,6 +40,7 @@ public class StartScript : MonoBehaviour
         countDownText.gameObject.SetActive(true);
         while(countDownNumber > 0 && countDownAnimation.activeInHierarchy)
         {
+            GameObject.Find("CountdownSound").GetComponent<AudioSource>().Play();
             countDownText.text = countDownNumber.ToString();
             countDownNumber--;
             yield return new WaitForSeconds(1);
